@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roshan Academy | 5th to Graduation Commerce | Virar East</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Roboto', sans-serif;
+            /* Using your chalkboard image as the background for the whole site */
+            background-image: url('https://user-images.githubusercontent.com/placeholder/roshan-academy-bg.jpg'); 
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        h1, h2, h3, .nav-link { font-family: 'Montserrat', sans-serif; }
+        
+        /* Glassmorphism Effect to keep text readable over the background */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .aakash-blue { color: #003366; }
+        .aakash-bg { background-color: #003366; }
+        .nav-sticky { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        
+        .hero-text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aakash-bg text-white py-2 px-6 flex justify-between items-center text-xs md:text-sm">
+        <div class="flex gap-4">
+            <span><i class="fas fa-phone-alt mr-1 text-yellow-400"></i> +91 9370090478 / 8898346879</span>
+            <span class="hidden md:inline"><i class="fas fa-envelope mr-1 text-yellow-400"></i> rkjha.roshan9@gmail.com</span>
+        </div>
+        <div class="flex gap-4">
+            <span class="font-bold text-yellow-400">Now Enrolling: School to Graduation</span>
+            <a href="https://youtube.com/@iamroshanacademy" target="_blank" class="hover:text-red-400"><i class="fab fa-youtube text-lg"></i></a>
+        </div>
+    </div>
+
+    <nav class="nav-sticky">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-yellow-500 p-2 rounded-lg text-white">
+                    <i class="fas fa-university text-2xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold aakash-blue leading-tight">ROSHAN ACADEMY</span>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Virar East Center</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-8 font-bold text-gray-700 uppercase text-xs tracking-wider">
+                <a href="#home" class="hover:text-blue-700">Home</a>
+                <a href="#about" class="hover:text-blue-700">About</a>
+                <a href="#courses" class="hover:text-blue-700">Courses</a>
+                <a href="#contact" class="hover:text-blue-700">Contact</a>
+            </div>
+            <button onclick="document.getElementById('enquiry-modal').classList.remove('hidden')" class="bg-blue-600 text-white px-6 py-2.5 rounded shadow-lg font-bold hover:bg-blue-700 transition text-sm">
+                ENQUIRE NOW
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="py-24 md:py-40 px-6 text-center">
+        <div class="max-w-4xl mx-auto bg-black/40 p-10 rounded-3xl backdrop-blur-sm border border-white/20">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white hero-text-shadow">Your Journey From Schooling To Graduation</h1>
+            <p class="text-lg md:text-2xl font-bold mb-10 text-yellow-400 hero-text-shadow">Led by Roshan Sir - Maths Specialist & Certified Career Counselor.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="document.getElementById('enquiry-modal').classList.remove('hidden')" class="bg-yellow-500 text-blue-900 px-10 py-4 rounded font-bold text-lg hover:bg-yellow-400 shadow-xl transition-all hover:scale-105">Request a Call Back</button>
+                <a href="https://youtube.com/@iamroshanacademy" target="_blank" class="bg-white text-blue-900 px-10 py-4 rounded font-bold text-lg flex items-center gap-2 transition-all hover:bg-gray-100">
+                    <i class="fab fa-youtube text-red-600"></i> Watch Lectures
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
+            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all duration-300">
+                <i class="fas fa-user-tie text-5xl text-blue-600 mb-6"></i>
+                <h3 class="text-xl font-bold mb-4 aakash-blue">Well Experienced Teacher</h3>
+                <p class="text-gray-600">Certified guidance for Maharashtra Board syllabus with personalized concept building.</p>
+            </div>
+            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all duration-300">
+                <i class="fas fa-chart-line text-5xl text-blue-600 mb-6"></i>
+                <h3 class="text-xl font-bold mb-4 aakash-blue">Best Paper Analysis</h3>
+                <p class="text-gray-600">Specialized analysis for Commerce and School subjects to guarantee 100% preparation.</p>
+            </div>
+            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all duration-300">
+                <i class="fas fa-calendar-check text-5xl text-blue-600 mb-6"></i>
+                <h3 class="text-xl font-bold mb-4 aakash-blue">Timely Completion</h3>
+                <p class="text-gray-600">Syllabus completion before December with 50+ Test Series and thorough revisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div class="glass-panel p-8 rounded-3xl shadow-2xl">
+                <h2 class="text-3xl font-bold mb-8 aakash-blue border-b-4 border-yellow-500 inline-block">CONTACT US</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-map-marker-alt text-2xl text-blue-600"></i>
+                        <div>
+                            <p class="font-bold">Main Center</p>
+                            <p class="text-gray-700">Shop No.9, Govind Apartment, Near Satyanarayan Hall, Chandansar Road, Virar East - 401305</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-phone-alt text-2xl text-blue-600"></i>
+                        <p class="text-gray-700 font-bold">+91 9370090478 / 8898346879</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-clock text-2xl text-blue-600"></i>
+                        <div>
+                            <p class="font-bold">Business Hours</p>
+                            <p class="text-sm text-gray-600">Mon - Sun: 10:00 AM - 09:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8 rounded-3xl text-gray-800 shadow-2xl border-t-8 border-blue-600">
+                <h3 class="text-2xl font-bold mb-6 aakash-blue">Register for New Batch</h3>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Student Name" class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
+                    <input type="tel" placeholder="Mobile Number" class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
+                    
+                    <select class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none bg-white">
+                        <option value="" disabled selected>Select Target Class</option>
+                        <optgroup label="Schooling Section">
+                            <option>5th Standard</option>
+                            <option>6th Standard</option>
+                            <option>7th Standard</option>
+                            <option>8th Standard</option>
+                            <option>9th Standard</option>
+                            <option>10th Standard (SSC)</option>
+                        </optgroup>
+                        <optgroup label="Commerce Section (Junior College)">
+                            <option>11th Commerce (FYJC)</option>
+                            <option>12th Commerce (SYJC)</option>
+                        </optgroup>
+                        <optgroup label="Commerce Graduation (Degree College)">
+                            <option>F.Y.B.Com (First Year)</option>
+                            <option>S.Y.B.Com (Second Year)</option>
+                            <option>T.Y.B.Com (Graduation Year)</option>
+                        </optgroup>
+                    </select>
+                    
+                    <button class="w-full aakash-bg text-white py-4 rounded-xl font-bold hover:opacity-90 shadow-lg transition-all">SUBMIT ENQUIRY</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black/90 text-gray-400 py-10 px-6 text-center text-sm">
+        <p class="mb-4">&copy; 2026 Roshan Academy. All Rights Reserved. Near Satyanarayan Hall, Virar East.</p>
+        <div class="flex justify-center gap-6">
+            <a href="https://youtube.com/@iamroshanacademy" class="hover:text-white transition">YouTube</a>
+            <a href="#" class="hover:text-white transition">Facebook</a>
+            <a href="#" class="hover:text-white transition">Instagram</a>
+        </div>
+    </footer>
+
+    <div id="enquiry-modal" class="hidden fixed inset-0 z-[2000] bg-black/80 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-md relative p-8 border-b-8 border-yellow-500">
+            <button onclick="document.getElementById('enquiry-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 text-2xl hover:text-gray-900">&times;</button>
+            <h2 class="text-2xl font-extrabold aakash-blue mb-6">Quick Registration</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Full Name" class="w-full p-3 border rounded-xl outline-none">
+                <input type="tel" placeholder="Phone Number" class="w-full p-3 border rounded-xl outline-none">
+                <select class="w-full p-3 border rounded-xl outline-none bg-white">
+                    <option>Standard: 5th to 10th</option>
+                    <option>Commerce: 11th / 12th</option>
+                    <option>Graduation: FY/SY/TY B.Com</option>
+                </select>
+                <button class="w-full aakash-bg text-white py-3 rounded-xl font-bold shadow-lg">REQUEST CALL BACK</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
