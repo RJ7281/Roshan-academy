@@ -10,17 +10,15 @@
     <style>
         body { 
             font-family: 'Roboto', sans-serif;
-            /* Using your chalkboard image as the background for the whole site */
-            background-image: url('https://user-images.githubusercontent.com/placeholder/roshan-academy-bg.jpg'); 
+            background-color: #f3f4f6; /* Fallback color */
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
         }
         h1, h2, h3, .nav-link { font-family: 'Montserrat', sans-serif; }
         
-        /* Glassmorphism Effect to keep text readable over the background */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
@@ -38,7 +36,7 @@
 
     <div class="aakash-bg text-white py-2 px-6 flex justify-between items-center text-xs md:text-sm">
         <div class="flex gap-4">
-            <span><i class="fas fa-phone-alt mr-1 text-yellow-400"></i> +91 9370090478 / 8898346879</span>
+            <span><i class="fas fa-phone-alt mr-1 text-yellow-400"></i> +91 9370090478</span>
             <span class="hidden md:inline"><i class="fas fa-envelope mr-1 text-yellow-400"></i> rkjha.roshan9@gmail.com</span>
         </div>
         <div class="flex gap-4">
@@ -64,18 +62,18 @@
                 <a href="#courses" class="hover:text-blue-700">Courses</a>
                 <a href="#contact" class="hover:text-blue-700">Contact</a>
             </div>
-            <button onclick="document.getElementById('enquiry-modal').classList.remove('hidden')" class="bg-blue-600 text-white px-6 py-2.5 rounded shadow-lg font-bold hover:bg-blue-700 transition text-sm">
+            <button onclick="openModal()" class="bg-blue-600 text-white px-6 py-2.5 rounded shadow-lg font-bold hover:bg-blue-700 transition text-sm">
                 ENQUIRE NOW
             </button>
         </div>
     </nav>
 
-    <section id="home" class="py-24 md:py-40 px-6 text-center">
+    <section id="home" class="py-24 md:py-40 px-6 text-center bg-gray-800 bg-[url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80')] bg-blend-overlay bg-cover">
         <div class="max-w-4xl mx-auto bg-black/40 p-10 rounded-3xl backdrop-blur-sm border border-white/20">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white hero-text-shadow">Your Journey From Schooling To Graduation</h1>
             <p class="text-lg md:text-2xl font-bold mb-10 text-yellow-400 hero-text-shadow">Led by Roshan Sir - Maths Specialist & Certified Career Counselor.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <button onclick="document.getElementById('enquiry-modal').classList.remove('hidden')" class="bg-yellow-500 text-blue-900 px-10 py-4 rounded font-bold text-lg hover:bg-yellow-400 shadow-xl transition-all hover:scale-105">Request a Call Back</button>
+                <button onclick="openModal()" class="bg-yellow-500 text-blue-900 px-10 py-4 rounded font-bold text-lg hover:bg-yellow-400 shadow-xl transition-all hover:scale-105">Request a Call Back</button>
                 <a href="https://youtube.com/@iamroshanacademy" target="_blank" class="bg-white text-blue-900 px-10 py-4 rounded font-bold text-lg flex items-center gap-2 transition-all hover:bg-gray-100">
                     <i class="fab fa-youtube text-red-600"></i> Watch Lectures
                 </a>
@@ -83,19 +81,19 @@
         </div>
     </section>
 
-    <section id="about" class="py-20">
+    <section id="about" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
-            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all duration-300">
+            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all">
                 <i class="fas fa-user-tie text-5xl text-blue-600 mb-6"></i>
                 <h3 class="text-xl font-bold mb-4 aakash-blue">Well Experienced Teacher</h3>
                 <p class="text-gray-600">Certified guidance for Maharashtra Board syllabus with personalized concept building.</p>
             </div>
-            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all duration-300">
+            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all">
                 <i class="fas fa-chart-line text-5xl text-blue-600 mb-6"></i>
                 <h3 class="text-xl font-bold mb-4 aakash-blue">Best Paper Analysis</h3>
                 <p class="text-gray-600">Specialized analysis for Commerce and School subjects to guarantee 100% preparation.</p>
             </div>
-            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all duration-300">
+            <div class="p-8 rounded-3xl glass-panel shadow-xl hover:scale-105 transition-all">
                 <i class="fas fa-calendar-check text-5xl text-blue-600 mb-6"></i>
                 <h3 class="text-xl font-bold mb-4 aakash-blue">Timely Completion</h3>
                 <p class="text-gray-600">Syllabus completion before December with 50+ Test Series and thorough revisions.</p>
@@ -131,62 +129,64 @@
 
             <div class="glass-panel p-8 rounded-3xl text-gray-800 shadow-2xl border-t-8 border-blue-600">
                 <h3 class="text-2xl font-bold mb-6 aakash-blue">Register for New Batch</h3>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Student Name" class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
-                    <input type="tel" placeholder="Mobile Number" class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
-                    
-                    <select class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none bg-white">
+                <form onsubmit="sendToWhatsapp(event, this)" class="space-y-4">
+                    <input type="text" name="name" placeholder="Student Name" required class="w-full p-4 border rounded-xl outline-none focus:ring-2 focus:ring-blue-600">
+                    <input type="tel" name="phone" placeholder="Mobile Number" required class="w-full p-4 border rounded-xl outline-none focus:ring-2 focus:ring-blue-600">
+                    <select name="class" required class="w-full p-4 border rounded-xl outline-none bg-white focus:ring-2 focus:ring-blue-600">
                         <option value="" disabled selected>Select Target Class</option>
-                        <optgroup label="Schooling Section">
-                            <option>5th Standard</option>
-                            <option>6th Standard</option>
-                            <option>7th Standard</option>
-                            <option>8th Standard</option>
-                            <option>9th Standard</option>
-                            <option>10th Standard (SSC)</option>
-                        </optgroup>
-                        <optgroup label="Commerce Section (Junior College)">
-                            <option>11th Commerce (FYJC)</option>
-                            <option>12th Commerce (SYJC)</option>
-                        </optgroup>
-                        <optgroup label="Commerce Graduation (Degree College)">
-                            <option>F.Y.B.Com (First Year)</option>
-                            <option>S.Y.B.Com (Second Year)</option>
-                            <option>T.Y.B.Com (Graduation Year)</option>
-                        </optgroup>
+                        <option>10th Standard (SSC)</option>
+                        <option>12th Commerce</option>
+                        <option>Graduation (B.Com)</option>
                     </select>
-                    
-                    <button class="w-full aakash-bg text-white py-4 rounded-xl font-bold hover:opacity-90 shadow-lg transition-all">SUBMIT ENQUIRY</button>
+                    <button type="submit" class="w-full aakash-bg text-white py-4 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg">SUBMIT ENQUIRY</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer class="bg-black/90 text-gray-400 py-10 px-6 text-center text-sm">
-        <p class="mb-4">&copy; 2026 Roshan Academy. All Rights Reserved. Near Satyanarayan Hall, Virar East.</p>
-        <div class="flex justify-center gap-6">
-            <a href="https://youtube.com/@iamroshanacademy" class="hover:text-white transition">YouTube</a>
-            <a href="#" class="hover:text-white transition">Facebook</a>
-            <a href="#" class="hover:text-white transition">Instagram</a>
-        </div>
+        <p>&copy; 2026 Roshan Academy. All Rights Reserved. Virar East.</p>
     </footer>
 
     <div id="enquiry-modal" class="hidden fixed inset-0 z-[2000] bg-black/80 flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl w-full max-w-md relative p-8 border-b-8 border-yellow-500">
-            <button onclick="document.getElementById('enquiry-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 text-2xl hover:text-gray-900">&times;</button>
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 text-2xl hover:text-gray-900">&times;</button>
             <h2 class="text-2xl font-extrabold aakash-blue mb-6">Quick Registration</h2>
-            <form class="space-y-4">
-                <input type="text" placeholder="Full Name" class="w-full p-3 border rounded-xl outline-none">
-                <input type="tel" placeholder="Phone Number" class="w-full p-3 border rounded-xl outline-none">
-                <select class="w-full p-3 border rounded-xl outline-none bg-white">
+            <form onsubmit="sendToWhatsapp(event, this)" class="space-y-4">
+                <input type="text" name="name" placeholder="Full Name" required class="w-full p-3 border rounded-xl outline-none">
+                <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 border rounded-xl outline-none">
+                <select name="class" required class="w-full p-3 border rounded-xl outline-none bg-white">
                     <option>Standard: 5th to 10th</option>
                     <option>Commerce: 11th / 12th</option>
-                    <option>Graduation: FY/SY/TY B.Com</option>
+                    <option>Graduation: B.Com</option>
                 </select>
-                <button class="w-full aakash-bg text-white py-3 rounded-xl font-bold shadow-lg">REQUEST CALL BACK</button>
+                <button type="submit" class="w-full aakash-bg text-white py-3 rounded-xl font-bold shadow-lg">REQUEST CALL BACK</button>
             </form>
         </div>
     </div>
 
+    <script>
+        // Modal Logic
+        function openModal() {
+            document.getElementById('enquiry-modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('enquiry-modal').classList.add('hidden');
+        }
+
+        // WhatsApp Logic
+        function sendToWhatsapp(event, form) {
+            event.preventDefault();
+            const name = form.name.value;
+            const phone = form.phone.value;
+            const targetClass = form.class.value;
+            
+            const message = `Hello Roshan Academy, I want to enquire.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Class:* ${targetClass}`;
+            const whatsappUrl = `https://wa.me/919370090478?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+        }
+    </script>
 </body>
 </html>
